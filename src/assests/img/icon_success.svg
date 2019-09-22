@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <g id="icon_success" transform="translate(-623 -212)">
+    <g id="circle" transform="translate(623 212)" fill="rgba(0,62,146,0.1)" stroke="#003e92" stroke-width="2">
+      <circle cx="60" cy="60" r="60" stroke="none"/>
+      <circle cx="60" cy="60" r="59" fill="none"/>
+    </g>
+    <path id="check" d="M-11284,3745l17,17,33-33" transform="translate(11942.5 -3473)" fill="none" stroke="#003e92" stroke-width="2"/>
+  </g>
+</svg>

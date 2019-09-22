@@ -1,0 +1,17 @@
+.documents {
+    .load-more-block {
+        background-color: $bg;
+
+        a {
+            color: $mainblue;
+
+            &::after {
+                background-image: url(../img/arrow_dark.svg);
+            }
+        }
+
+        &.info-block::before {
+            background-color: $bg;
+        }
+    }
+}

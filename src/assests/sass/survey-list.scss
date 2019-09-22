@@ -1,0 +1,206 @@
+.radio-container, .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+  
+.radio-container input,  .checkbox-container input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid rgba($color: $mainblue, $alpha: .4);
+}
+
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 1px solid rgba($color: $mainblue, $alpha: .4);
+}
+  
+.radio-container:hover input ~ .radio-checkmark {
+    background-color: rgba($color: $mainblue, $alpha: .4);
+}
+
+.radio-container input:checked ~ .radio-checkmark {
+    background-color: $mainblue;
+}
+
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.radio-container input:checked ~ .radio-checkmark::after {
+    display: block;
+}
+
+.radio-container .radio-checkmark::after {
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
+.checkbox-container:hover input ~ .checkbox-checkmark {
+    background-color: rgba($color: $mainblue, $alpha: .4);
+}
+
+.checkbox-container input:checked ~ .checkbox-checkmark {
+    background-color: $mainblue;
+}
+
+.checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.checkbox-container input:checked ~ .checkbox-checkmark::after {
+    display: block;
+}
+
+.checkbox-container .checkbox-checkmark::after {
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 8px;
+    border: solid $wh;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: .2s;
+}
+
+.survey-block {
+    h3 {
+        font-size: $f-xl;
+        max-height: 193px;
+        line-height: 1.4em;
+        margin-bottom: 30px;
+         
+        &:hover {
+            color: black;
+        }
+    }
+
+    label {
+        font-size: $f-md;
+        margin-bottom: 13px;
+    }
+}
+
+.survey-submit { 
+    .disabled {
+        opacity: .5;
+        cursor: unset;
+
+        &::after {
+            right: 0px; 
+        }
+    }
+}
+
+.vote-with-buttons {
+    position: relative;
+}
+
+.options-btns-wrap {
+    position: absolute;
+    top: -4px;
+    right: 0px;
+    min-width: 150px;
+}
+
+.survey-button-wrap {
+    display: inline-block;
+
+    &:not(:last-child) {
+        margin-right: 35px;
+    }
+}
+
+
+
+.edit-survey-button {
+    color: $mainblue;
+    font-size: 12px;
+    padding: 5px 0px 0px 29px;
+    top: 0px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 0px;
+        top: 0px;
+        background-image: url(../img/edit.svg);
+        background-size: contain;
+    }
+}
+
+.delete-survey-button {
+    color: $mainblue;
+    font-size: 12px;
+    padding: 5px 0px 0px 24px;
+    top: 0px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 20px;
+        left: 0px;
+        top: 0px;
+        background-image: url(../img/bin.svg);
+        background-size: contain;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .options-btns-wrap {
+        display: block;
+        width: 100%;
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .survey-block {
+        h3 {
+            font-size: $m-h1;
+            max-height: 150px;
+        }
+    
+        label {
+            font-size: $m-p;
+            margin-bottom: 15px;
+        }
+    }
+}

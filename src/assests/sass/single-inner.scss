@@ -1,0 +1,151 @@
+.single-info {
+    padding: 70px 0px 30px;
+
+    h3 {
+        max-width: 450px;
+        // max-height: 75px;
+        // overflow-y: hidden;
+    }
+}
+
+.single-content {
+    margin: 0px auto 70px;
+    max-width: $text-width;
+}
+
+.single-slider-wrap {
+    margin: 0px auto 70px;
+    width: $img-width;
+    position: relative;
+}
+
+.single-slider {
+    height: 430px;
+    width: 100%;
+    background-color: $mainblue;
+}
+
+.slick-track {
+    height: 432px;
+}
+
+.slide {
+    height: 100%;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slide-left-buttton, .slide-right-buttton {
+    height: 42px;
+    width: 42px;
+    margin-bottom: 28px;
+    opacity: .5;
+    transition: $easing;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+        transition: $easing;
+    }
+    
+}
+
+.slide-right-buttton {
+    background-image: url(../img/slider-button.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 29px;
+}
+
+.slide-left-buttton {
+    background-image: url(../img/slider-button.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(180deg);
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 991px) { 
+    .single-slider-wrap {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 440px) { 
+    .single-slider-wrap {
+        height: 220px;
+    }
+
+    .single-slider, .slick-track {
+        height: 163px;
+    }
+
+    .slide-left-buttton, .slide-right-buttton {
+        background-image: url(../img/slider-button-blue.svg);
+        margin-bottom: 0px;
+    }
+}
+
+.single-video {
+    width: $img-width;
+    height: 432px;
+    margin: 0 auto 70px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .single-info {
+        padding: 50px 20px 20px;
+    }
+
+    .single-content {
+        padding: 0px 20px 0px;
+        margin-bottom: 40px;
+    }
+
+    .single-video {
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+    }
+}
+
+.full-row {
+    border-top: 1px solid rgba(159, 171, 199, 0.4);
+
+    .info-block {
+        border-bottom: none;
+    }
+}
+
+.documents {
+
+    &.single {
+        .info-block {
+            padding: 70px 0px;
+            width: 100%;
+            border-right: none;
+            max-width: $text-width;
+            margin: 0 auto;
+        }
+    }
+}
+

@@ -1,0 +1,340 @@
+body {
+    background: $bg;
+    font-family: $popins;
+    letter-spacing: .02em;
+}
+
+h1 {
+    font-size: $f-xxl;
+    line-height: 1.5em;
+}
+
+h2 {
+    font-size: $f-xl;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: $f-l;
+    line-height: 1.5em;
+}
+
+h4 {
+    font-size: $f-md;
+    line-height: 1.5em;
+}
+
+p {
+    font-size: $f-md;
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 991px) {
+    p {
+        font-size: $m-p;
+        line-height: 1.7em;
+    }
+
+    h2 {
+        font-size: $m-h2;
+    }
+
+    h3 {
+        font-size: $m-h3;
+    }
+}
+
+.container {
+    max-width: 1260px;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        padding: 0px 20px;
+    }
+}
+
+.center-vertical {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.centered-text {
+    display: flex;
+    justify-content: center;
+}
+
+.width-wrap {
+    max-width: $width;
+    padding: 0px 10px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+    .width-wrap { 
+        padding: 0px 20px;
+    }
+}
+
+.width-wrap-700 {
+    max-width: $text-width;
+    margin: 0 auto;
+}
+
+.width-wrap-850 {
+    max-width: $img-width;
+    margin: 0 auto;
+}
+
+.flex_spaceBetween {
+    justify-content: space-between;
+}
+
+
+.date {
+    color: $med;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.background-mainblue {
+    background-color: $mainblue;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-content {
+    padding: 70px 0px 90px;
+
+    h3 {
+        max-width: 320px;
+        padding-bottom: 30px;
+    }
+
+    h4 {
+        padding-bottom: 10px;
+        font-weight: 500;
+    }
+
+    p {
+        padding-bottom: 30px;
+    }
+
+    ul {
+        padding-bottom: 40px;
+    }
+
+    li {
+        padding: 0px 0px 20px 40px;
+        position: relative;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 3px;
+            width: 8px;
+            height: 8px;
+            background-color: $mainblue;
+            border-radius: 100%;
+        }
+    }
+
+    table {
+        margin-bottom: 40px;
+    }
+
+    td {
+        padding: 1em;
+        border: 1px solid $sky;
+    }
+}
+
+@media screen and (max-width: 991px) { 
+    .text-content {
+        padding: 52px 20px 80px;
+    
+    }
+
+    .table-wrap {
+        overflow-x: scroll;
+    }
+}
+
+.hero-blue {
+    height: 350px;
+    background-color: $mainblue;
+
+    h1 {
+        color: $wh;
+        padding-top: 220px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hero-blue {
+        min-height: 200px;
+        height: auto;
+
+        h1 {
+            padding-top: 118px;
+            font-size: $m-h1;
+        }
+    }
+}
+
+.hero-blue {
+
+    &.centered {
+        h1 {
+            text-align: center;
+        }
+    }
+}
+
+
+.coockie {
+    position: fixed;
+    width: 220px;
+    background-color: $wh;
+    border-radius: 3px;
+    right: 40px;
+    bottom: 30px;
+    padding: 18px 21px 18px 15px;
+    z-index: 15;
+
+    p, a {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+   .coockie-btns {
+       margin-top: 14px;
+       display: flex;
+       justify-content: space-between;
+   }
+
+   .more-btn {
+
+    &::after {
+        top: 2px;
+    }
+       
+   }
+
+   .coockie-link {
+       font-size: 12px;
+       color: $mainblue;
+       position: relative;
+
+       &::after {
+           content: "";
+           position: absolute;
+           height: 2px;
+           width: 100%;
+           background-color: $mainblue;
+           bottom: -5px;
+           left: 0px;
+
+       }
+   }
+
+}
+
+.coockie-close {
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    background-image: url(../img/coockie-close.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transition: $easing; 
+
+    &:hover {
+        transform: rotate(90deg);
+        transition: $easing; 
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .coockie {
+        width: 100%;
+        right: 0px;
+        bottom: 0px;
+        border-radius: 0px;
+        padding: 20px;
+
+        p, a {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .coockie-link {
+            font-size: 14px;
+        }
+
+        .more-btn {
+
+            &::after {
+                top: 3px;
+            }
+        }
+
+
+    }
+
+}
+
+.page_not_found {
+    height: 100vh;
+    color: $wh;
+
+    > div {
+        height: 100%;
+    }
+}
+
+.page_not_found-container {
+    text-align: center;
+}
+
+.line-main {
+    font-size: 130px;
+    line-height: 1em;
+}
+
+.line-sub {
+    font-size: 31px;
+    line-height: 1em;
+    margin-bottom: 35px;
+}
+
+.line-text {
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 991px) {
+    .nomob {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .onlymob {
+        display: none !important;
+    }
+}
+

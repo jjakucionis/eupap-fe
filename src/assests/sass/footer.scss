@@ -1,0 +1,137 @@
+.footer-row-top {
+    border-bottom: 1px solid rgba($color: $med, $alpha: .4);
+    border-top: 1px solid rgba($color: $med, $alpha: .4);
+}
+
+.footer-container {
+    max-width: 1260px;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer-block {
+    width: calc(100% / 3);
+    padding: 26px 0px 27px;
+    position: relative;
+    text-align: center;
+
+    &:not(:last-child) {
+        border-right: 1px solid rgba($color: $med, $alpha: .4);
+    }
+
+    p {
+        transform: translateY(-50%);
+        top: 50%;
+        position: absolute;
+        font-size: $f-l;
+        width: 100%;
+    }
+
+    a {
+        display: inline;
+    }
+
+    p::before {
+        content: attr(prefix);
+        opacity: 1;
+        margin-right: .5em;
+    }
+}
+
+.footer-row-bottom {
+
+    .footer-container {
+        padding: 26px 40px 27px;
+        display: flex;
+    }
+
+    p, a {
+        font-size: $f-sm;
+        line-height: 1.5em;
+    }
+
+    
+}
+
+.terms-block {
+    display: flex;
+    flex: 50%;
+    justify-content: flex-end;
+
+    a:not(:last-child) {
+        margin-right: 39px; 
+    }
+
+}
+
+@media screen and (max-width: 991px) { 
+    .footer-container {
+        flex-wrap: wrap;
+    }
+
+    .footer-block {
+        flex: 100%;
+        
+        &:not(:last-child) {
+            border-right: none;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: calc(100vw / 2);
+                background-color: rgba($color: $med, $alpha: .4);
+                bottom: 0px;
+                left: 50%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: calc(100vw / 2);
+                background-color: rgba($color: $med, $alpha: .4);
+                bottom: 0px;
+                right: 50%;
+            }
+        }
+
+        p {
+            font-size: $m-h3;
+        }
+    }
+
+    .footer-row-bottom {
+
+        .footer-container {
+            padding: 20px 30px 25px;
+            flex-direction: column;
+
+            & > p {
+                order: 2;
+                text-align: center;
+            }
+        }
+    
+        p, a {
+            font-size: $f-sm;
+            line-height: 1.5em;
+        }
+    
+        
+    }
+
+    .terms-block {
+        display: flex;
+        flex: 50%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    
+        a:not(:last-child) {
+            margin-right: 0px; 
+        }
+    
+    }
+}

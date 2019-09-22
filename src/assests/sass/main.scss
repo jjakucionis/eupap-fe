@@ -1,0 +1,61 @@
+$bg: #F0F4FA;
+$bl: #000000;
+$wh: #ffffff;
+$sky: #BBCFE1;
+$med: #9FABC7;
+$purple: #32375E;
+$mainblue: #003E92;
+$gr1: rgba($color: #068466, $alpha: .5);
+$gr2: rgba($color: #ABCC76, $alpha: .8);
+$gr3: rgba($color: #005450, $alpha: .8);
+$gr4: rgba($color: #145344, $alpha: .5);
+$gr5: rgba($color: #539B39, $alpha: .8);
+$gr6: rgba($color: #0F686F, $alpha: .8);
+$gr7: rgba($color: #5BDBBD, $alpha: .5);
+$gr8: rgba($color: #677636, $alpha: .8);
+$gr9: rgba($color: #003454, $alpha: .8);
+$gr10: rgba($color: #88BA00, $alpha: .7);
+$input-border: #1A529D;
+$modal-border: #707070;
+$red: #FF4D4D;
+$com-reply: #DEE5F1;
+
+$easing: 0.3s cubic-bezier(0.2, 0.6, 0.3, 1);
+
+$width: 1024px;
+$img-width: 850px;
+$text-width: 700px;
+
+$basepx: 16px;
+$popins: 'Poppins', sans-serif;
+$f-sm: 13px;
+$f-md: 17px;
+$f-l: 27px;
+$f-xl: 47px;
+$f-xxl: 57px;
+$m-h1: 37px;
+$m-h2: 25px;
+$m-h3: 21px;
+$m-p: 15px;
+
+@import "./mixins.scss";
+@import "./reset.scss";
+@import "./defaults.scss";
+@import "./header.scss";
+@import "./home.scss";
+@import "./footer.scss";
+@import "./blocks.scss";
+@import "./buttons.scss";
+@import "./single-inner.scss";
+@import "./about.scss";
+@import "./partners.scss";
+@import "./documents.scss";
+@import "./forms.scss";
+@import "./contacts.scss";
+@import "./modals.scss";
+@import "./signin.scss";
+@import "./comments.scss";
+@import "./survey-list.scss";
+@import "./survey-report-forms.scss"
+
+

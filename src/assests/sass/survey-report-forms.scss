@@ -1,0 +1,734 @@
+// sections
+.create-survey, .create-report {
+    padding: 40px 0px 91px;
+}
+
+.def-label {
+    display: block;
+    font-size: 14px;
+    color: #003E92;
+    padding: 0px 0px 10px 0px;
+    overflow: hidden;
+}
+
+// textarea field
+.create-sur-rep-textarea {
+
+    width: 500px;
+    margin-bottom: 30px;
+
+    label {
+        font-size: 14px;
+        color: $mainblue;
+        padding-bottom: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 162px;
+        background-color: transparent;
+        resize: none;
+        padding: 24px 24px 24px 20px;
+        border: 1.5px solid rgba($color: $med, $alpha: .5);
+        font-family: inherit;
+        color: $mainblue;
+        font-size: $f-md;
+        
+    }
+
+    &.error {
+        textarea {
+            transition: $easing;
+            border-color: $red;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) { 
+    .create-sur-rep-textarea {
+        width: 100%;
+
+        textarea {
+            min-height: 100px;
+            padding: 15px 15px 35px;
+        }
+    }
+}
+
+// radio
+.create-sur-rep-type {
+
+    margin-bottom: 50px;
+
+    .radio-label {
+        display: block;
+        font-size: 14px;
+        color: $mainblue;
+        padding: 0px 0px 10px 0px;
+        overflow: hidden;
+    }
+
+    label {
+        display: inline;
+        font-size: $f-md;
+        color: $mainblue;
+        padding-left: 26px;
+
+        &:last-child {
+            margin-left: 50px;
+        }
+
+        input {
+            height: 0px;
+            width: 0px;
+        }
+    }
+
+    .radio-checkmark {
+        top: 3px;
+    }
+
+    &.error {
+        .radio-checkmark {
+            transition: $easing;
+            border-color: $red;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) { 
+    .create-sur-rep-type {
+
+        margin-bottom: 30px;
+
+        .radio-label {
+            padding-bottom: 17px;
+        }
+
+        label {
+            display: block;
+
+            &:last-child {
+                margin-left: 0px;
+            }
+
+        }
+
+        .radio-container {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+// input fields
+.create-sur-rep-input {
+
+    width: 500px;
+    height: 71px;
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    &:last-child {
+        margin-bottom: 25px;
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        padding: 24px 24px 23px 20px;
+        border: 1.5px solid rgba($color: $med, $alpha: .5);
+        font-family: inherit;
+        color: $mainblue;
+        font-size: $f-md;
+
+        &::placeholder {
+            color: rgba($color: $mainblue, $alpha: .5);
+        }
+
+        &.focusedToRemove {
+            border: 1.5px solid rgba($color: $med, $alpha: 1);
+        }
+    }
+
+    &--remove {
+        height: 26px;
+        width: 26px;
+        position: absolute;
+        background-image: url(../img/remove-input.svg);
+        background-size: contain;
+        top: 24px;
+        right: -40px;
+        cursor: pointer;
+        transition: $easing;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+
+    &.error {
+
+        input {
+            transition: $easing;
+            border-color: $red;
+        }
+    }
+}
+
+.add-aditional-field, .remove-field {
+
+    margin-bottom: 20px;
+
+    p {
+        font-size: 14px;
+        color: $mainblue;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1.5px;
+            background-color: $mainblue;
+            left: 0px;
+            bottom: 0px;
+            transition: $easing;
+        }
+
+        &:hover {
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.remove-field {
+    opacity: .4;
+    display: inline-block;
+
+    &-act {
+        opacity: 1;
+    }
+}
+
+
+.create-sur-rep-input--labeled {
+    width: 500px;
+    height: 100%;
+    position: relative;
+    margin-bottom: 25px;
+
+    input {
+        width: 100%;
+        height: 71px;
+        background-color: transparent;
+        padding: 24px 24px 23px 20px;
+        border: 1.5px solid rgba($color: $med, $alpha: .5);
+        font-family: inherit;
+        color: $mainblue;
+        font-size: $f-md;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        color: #003E92;
+        padding: 0px 0px 10px 0px;
+        overflow: hidden;
+    }
+
+    &.error {
+
+        input {
+            border-color: red;
+            transition: $easing;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .create-sur-rep-input {
+        width: 100%;
+    }
+
+    .add-aditional-field, .remove-field {
+
+        margin-bottom: 30px;
+
+        p {
+            &::after {
+
+                width: 100%;
+            }
+        }
+    }
+
+    .create-sur-rep-input--labeled {
+        width: 100%;
+    }
+}
+
+//input animation on append
+.create-sur-rep-input {
+  
+    input,  .create-sur-rep-input--remove {
+
+        animation: animateElement linear .3s;
+        animation-iteration-count: 1;
+    }
+}
+
+@keyframes animateElement{
+  0% {
+    opacity:0;
+    transform:  translate(0px,10px);
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px);
+  }
+}
+
+// submit button
+.create-sur-rep-submit {
+    display: inline-block;
+    border: 1px solid $mainblue;
+    border-radius: 50px;
+    margin-top: 30px;
+    position: relative;
+
+    input {
+        font-family: inherit;
+        font-size: $f-md;
+        color: $mainblue;
+        padding: 16px 103px 16px 72px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        background-image: url(../img/arrow_dark.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        top: 24px;
+        right: 68px;
+        transition: $easing;
+    }
+
+    &:hover {
+
+        &::after {
+            right: 64px;
+        }
+    }
+
+    &.loading {
+
+        input {
+            color: transparent;
+        }
+
+        &::after {
+            background-image: url(../img/submit_preloader.svg);
+            height: 40px;
+            width: 40px;
+            top: 9px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+}
+
+.create-report-form {
+
+    .create-sur-rep-submit-wrap {
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .create-sur-rep-submit {
+
+        border: 2px solid $mainblue;
+
+        input {
+            padding: 15px 74px 14px 44px;
+            font-size: 15px;
+        }
+
+        &::after  {
+            right: 45px;
+            top: 22px;
+        }
+
+        &:hover {
+
+            &::after {
+                right: 45px;
+            }
+        }
+    }
+
+    .create-report-form .create-sur-rep-submit-wrap {
+        text-align: left;
+    }
+}
+
+//datepicker
+
+.datepicker-wrap {
+    width: 500px;
+    margin-bottom: 25px;
+
+    .datepicker-cont {
+        display: flex;
+    }
+
+    .datepicker-input-wrap {
+
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 18px;
+            width: 18px;
+            background-image: url(../img/icon_calendar.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            top: 50px;
+            right: 20px;
+        }
+
+        &.error {
+
+            input {
+                border-color: $red;
+
+                &::placeholder {
+                    color: $red;
+                }
+            }
+
+            &::after {
+                
+                background-image: url(../img/icon_calendar_alrt.svg);
+            }
+
+            
+        }
+    }
+
+    input {
+        width: 240px;
+        height: 71px;
+        background-color: transparent;
+        padding: 24px 24px 23px 20px;
+        border: 1.5px solid rgba(159, 171, 199, 0.5);
+        font-family: inherit;
+        color: #003E92;
+        font-size: 17px;
+
+        &::placeholder {
+            color: rgba($color: $mainblue, $alpha: .5)
+        }
+    } 
+}
+
+@media screen and (max-width: 991px) {
+    .datepicker-wrap {
+        width: 100%;
+
+        .datepicker-cont {
+            flex-wrap: wrap;
+
+            .datepicker-input-wrap {
+                width: 100%;
+                margin-right: 0px;
+
+                input {
+                    width: 100%;
+                }
+
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        
+    }
+
+}
+
+#ui-datepicker-div {
+    z-index: 15 !important;
+}
+
+//wysiwyg editor
+.create-sur-rep-wysiwyg--wrap {
+    margin-bottom: 30px;
+
+    .create-sur-rep-wysiwyg--cont {
+
+    }
+
+    .editor {
+        width: 100%;
+        height: 402px;
+        border: 1.5px solid rgba($color: $med, $alpha: .5);
+
+        a {
+            display: inline;
+        }
+    }
+
+    &.error {
+
+        .editor {
+            border-color: $red;
+        }
+
+    }
+}
+
+.trumbowyg-box {
+    margin-top: 0px;
+}
+
+.trumbowyg-editor table td {
+    border: 1px dotted $med;
+}
+
+//drag and drop field
+.drag-drop-img-cont {
+    width: 100%;
+    height: 170px;
+    border: 1.5px solid rgba($color: $med, $alpha: .5);
+    border-radius: 3px;
+    position: relative;
+    transition: $easing;
+}
+
+.dz-drag-hover {
+    border: 1.5px solid rgba($color: $mainblue, $alpha: 1);
+}
+
+.drag-drop-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 170px;
+    font-size: 25px;
+    color: rgba($color: $mainblue, $alpha: .5);
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.drag-drop-preview-cont {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 25px;
+}
+
+.dz-image-preview {
+    width: 155px;
+    height: 104px;
+    margin-right: 37px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.dz-remove {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    color: transparent;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        background-image: url(../img/remove-input.svg);
+        background-size: contain;
+        top: 0px;
+        left: 0px;
+        cursor: pointer;
+        transition: $easing;
+    }
+
+    &:hover {
+
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.dz-details, .dz-progress, .dz-error-message, .dz-success-mark, .dz-error-mark {
+    display: none !important;
+}
+
+//upload document fields
+
+.upload-document-wrap {
+    display: flex;
+    width: auto;
+
+    input[type=text] {
+        width: 500px;
+        margin-right: 20px;
+    }
+
+    .browse-file-wrap {
+
+        span {
+            font-size: 14px;
+            color: $mainblue;
+            position: relative;
+            padding-left: 22px;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 12px;
+                height: 24px;
+                background-image: url(../img/add_icon.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                left: 0px;
+                top: -4px;
+            }
+        }
+    }
+
+    &.error {
+
+        input {
+            border-color: $red;
+        }
+    }
+}
+
+.uploaded-document-wrap {
+    display: flex;
+}
+
+.uploaded-document-name {
+    font-size: 14px;
+    color: $mainblue;
+    padding-left: 34px;
+    position: relative;
+    padding-right: 10px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        background-image: url(../img/ic_pdf.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+    }
+}
+
+.create-sur-rep-input--remove-doc {
+    height: 26px;
+    width: 26px;
+    background-image: url(../img/remove-input.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 23px;
+    position: relative;
+    right: 0px;
+    cursor: pointer;
+    transition: $easing;
+    
+
+    &:hover {
+        transform: rotate(90deg);
+    }
+}
+
+@media screen and (max-width: 991px) { 
+    .upload-document-wrap {
+        flex-wrap: wrap;
+
+        & input[type=text] {
+            width: 100%;
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .create-sur-rep-input {
+        height: auto;
+    }
+
+    .create-sur-rep-input--remove-doc {
+        position: absolute;
+        top: 97px;
+    }
+
+}
+
+// error message
+.create-report-form, .create-survey-form {
+
+    .alert-msg {
+        display: none;
+        color: $red;
+        font-size: 11px;
+        padding-left: 34px;
+        position: relative;
+        padding-top: 4px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            top: 0px;
+            left: 0px;
+            background-image: url(../img/error_icon_small.svg);
+            background-size: contain;
+
+        }
+    }
+}
+
+
+
+    

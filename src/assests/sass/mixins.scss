@@ -1,0 +1,124 @@
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+  }
+  @mixin translate($type, $qnt: -50%, $qntt: -50%, $qnttt: -50%) {
+    @if $type == X {
+      @include css3-prefix('transform', 'translateX('+$qnt+')');
+    } @else
+    if $type == Y {
+      @include css3-prefix('transform', 'translateY('+$qnt+')');
+    } @else
+    if $type == Z {
+      @include css3-prefix('transform', 'translateZ('+$qnt+')');
+    } @else
+    if $type == XY {
+      @include css3-prefix('transform', 'translate('+$qnt+', '+$qntt+')');
+    } @else
+    if $type == XYZ {
+      @include css3-prefix('transform', 'translate3d('+$qnt+', '+$qntt+', '+$qnttt+')');
+    }
+  }
+  @mixin preserve3d($var: preserve3d) {
+    @include css3-prefix('transform-style', $var);
+  }
+  @mixin backface($var: hidden) {
+    @include css3-prefix('backface-visibility', $var);
+  }
+  @mixin box-sizing($var: border-box) {
+    @include css3-prefix('box-sizing', $var);
+  }
+  @mixin box-shadow($var) {
+    @include css3-prefix('box-shadow', $var);
+  }
+  @mixin border-radius($var: 50%) {
+    @include css3-prefix('border-radius', $var);
+  }
+  @mixin transition($vars...) {
+    @include css3-prefix('transition', $vars);
+  }
+  @mixin transform($vars...) {
+    @include css3-prefix('transform', $vars);
+  }
+  @mixin transform-origin($var) {
+    @include css3-prefix('transform-origin', $var);
+  }
+  @mixin rotate($deg) {
+    @include css3-prefix('transform', 'rotate('+$deg+'deg)');
+  }
+  @mixin scale($var) {
+    @include css3-prefix('transform', 'scale('+$var+'deg)');
+  }
+  @mixin blur($var) {
+    @include css3-prefix('filter', 'blur('+$var+'deg)');
+  }
+  @mixin opacity($var) {
+    opacity: $var;
+    $ie: $var * 100;
+    filter: alpha(opacity=$ie);
+  }
+  @mixin bgCover() {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @mixin bgContain() {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  @mixin clearfix() {
+    &:after,
+    &:before {
+      display: table;
+      content: "";
+    }
+  
+    &:after {
+      clear: both;
+    }
+  }
+  @mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+    @-khtml-keyframes #{$animation-name} {
+      @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+      @content;
+    }
+    @-o-keyframes #{$animation-name} {
+      @content;
+    }
+    @keyframes #{$animation-name} {
+      @content;
+    }
+  }
+  @mixin animation($str) {
+    @include css3-prefix('animation', #{$str});
+  }
+  @function em($target, $context: $basepx) {
+    @if $target == 0 {
+      @return 0
+    }
+    @return $target / $context + 0em;
+  }
+  @mixin fontSrc($name) {
+    src: url("../fonts/#{$name}.eot");
+    src: url("../fonts/#{$name}.eot?#iefix") format('embedded-opentype'), url("../fonts/#{$name}.woff2") format('woff2'), url("../fonts/#{$name}.woff") format('woff'), url("../fonts/#{$name}.ttf") format('truetype');
+  }
+  @mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+  }
+  

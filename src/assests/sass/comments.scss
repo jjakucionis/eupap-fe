@@ -1,0 +1,235 @@
+.comments {
+    background-color: rgba($color: $med, $alpha: .09);
+}
+
+.comments-wrap {
+    max-width: 700px;
+    padding: 90px 21px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+    .comments-wrap {
+        padding: 50px 20px;
+    }
+}
+
+.comments-block-head {
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.comment-block {
+    margin-bottom: 18.5px;
+
+    &--reply {
+        padding-left: 40px;
+    }
+}
+
+.comment-content {
+    background-color: $wh;
+    padding: 11px 25px 10px;
+    border-radius: 20px;
+}
+
+.comment-name {
+    font-size: 12px;
+    color: $mainblue;
+    font-weight: 500;
+    padding-right: 7px;
+}
+
+.comment-reply-to {
+    font-style: italic;
+    color: $mainblue;
+    padding-right: 7px;
+}
+
+.comment-text {
+    display: inline;
+    font-size: 12px;
+    line-height: 1.9em;
+}
+
+.comment-bottom {
+    padding: 5px 25px 0px;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: $mainblue;
+    font-weight: 500;
+    padding-right: 7px;
+    display: inline;
+}
+
+.comment-reply {
+    font-size: 12px;
+    color: $mainblue;
+    font-weight: 500;
+    display: inline;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: $mainblue;
+        left: 0px;
+        bottom: -3px;
+
+    }
+}
+
+.comment-form-block {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    &:not(:last-child) {
+        margin-bottom: 18.5px;
+    }
+
+    &--reply {
+
+        form {
+            width: 100%;
+            margin-left: 40px;
+            height: 41px;
+            background-color: $com-reply;
+            border-radius: 20px;
+        }
+    }
+
+    &--makeNew {
+
+        form {
+            width: 100%;
+            height: 41px;
+            background-color: $com-reply;
+            border-radius: 20px;
+        }
+    }
+
+    form {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .form-submit {
+        background-color: transparent;
+        border: none;
+        font-size: 12px;
+        font-family: $popins;
+        color: $mainblue;
+        position: absolute;
+        right: 25px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    input[name=file] {
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+    }
+}
+
+.reply-text {
+    height: 41px;
+    background-color: transparent;
+    border: none;
+    padding-left: 25px;
+    color: $mainblue;
+    width: calc(100% - 131px);
+
+    &::placeholder {
+        color: rgba($color: $mainblue, $alpha: .65);
+        font-size: 12px;
+        font-family: $popins;
+        
+    }
+}
+
+
+
+.img_upload-tr {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 16px;
+    width: 16px;
+    top: 11px;
+    right: 100px;
+    background-image: url(../img/attach_img.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.doc_upload-tr {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 16px;
+    width: 16px;
+    top: 11px;
+    right: 73px;
+    background-image: url(../img/attach_file.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 991px) {
+    .reply-text {
+        padding-left: 15px;
+    }
+
+    .comment-form-block {
+
+        .form-submit {
+            right: 8px;
+        }
+    }
+
+    .doc_upload-tr {
+        right: 56px;
+    }
+
+    .img_upload-tr {
+        right: 83px;
+    }
+}
+
+.comment-file {
+    display: inline-block;
+    margin-right: 7px;
+    font-size: 11px;
+    color: $mainblue;
+}
+
+.remove-comment-file {
+    height: 16px;
+    width: 16px;
+    background-image: url(../img/remove-input.svg);
+    background-size: contain;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;   
+    display: inline-block;
+    transition: $easing;
+
+    &:hover {
+        transform: rotate(90deg);
+    }
+}
+

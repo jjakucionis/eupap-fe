@@ -1,0 +1,143 @@
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-blocks {
+    overflow-x: hidden;
+}
+
+.info-block {
+    width: 50%;
+    position: relative;
+
+    &:nth-child(odd) {
+        padding: 70px 90px 70px 0px;
+        border-right: 1px solid rgba($color: $med, $alpha: .4);
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 100vw;
+            border-bottom: 1px solid rgba($color: $med, $alpha: .4);
+        }
+
+    }
+
+    &:nth-child(even) {
+        padding: 70px 0px 70px 90px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100vw;
+            border-bottom: 1px solid rgba($color: $med, $alpha: .4);
+        }
+    }
+
+    h3 {
+        max-height: 75px;
+        overflow-y: hidden;
+        transition: $easing;
+
+        &:hover {
+            color: $mainblue;
+            transition: $easing;
+        }
+    }
+
+    &.load-more-block {
+
+        &.toLeft {
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100vw;
+                background-color: $mainblue;
+                top: 0px;
+                right: 0px;
+
+            }
+        }
+
+        &.toRight {
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100vw;
+                background-color: $mainblue;
+                top: 0px;
+                left: 0px;
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .info-blocks {
+
+        .width-wrap {
+            padding: 0px;
+        }
+
+        .info-block {
+            width: 100%;
+            border-right: none;
+            border-left: none;
+            padding: 50px 20px;
+        }
+
+        h3 {
+            max-height: 91px;
+            overflow: hidden;
+        }
+
+        .load-more-block {
+            min-height: 121px;
+        }
+    }
+
+    
+}
+
+.load-more-block {
+    background-color: $mainblue;
+    min-height: 308px;
+
+    .more-btn {
+        color: $wh;
+
+        &::after {
+            background-image: url(../img/arrow.svg);
+            transform: rotate(90deg);
+        }
+
+        &:hover::after {
+            top: 10px;
+            right: 0px;
+        }
+    }
+
+    a {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.info-block.load-more-block {
+
+    .more-wrap {
+        margin: 0px;
+        height: 100%;
+        text-align: center;
+    }
+}

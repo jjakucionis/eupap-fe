@@ -1,0 +1,580 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    z-index: 20;
+    transition: $easing;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        height: 90px;
+    }
+}
+
+.logged {
+
+    .sign_in_btn {
+        border: 1px solid white;
+    }
+
+    .header_menu {
+
+        li {
+
+            a {
+                opacity: .7;
+
+                &:hover {
+                    opacity: 1;
+                    transition: $easing;
+                }
+            }
+
+            &.active {
+
+                a { 
+                opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.inner {
+
+    .sign_in_btn {
+        border: 1px solid transparent;
+        background-color: $wh;
+        color: $mainblue;
+
+        &::after {
+            background-image: url(../img/arrow_dark.svg);
+        }
+    }
+
+    .header_menu {
+
+        li {
+
+            a {
+                opacity: .7;
+
+                &:hover {
+                    opacity: 1;
+                    transition: $easing;
+                }
+            }
+
+            &.active {
+
+                a { 
+                opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    &.shrink {
+        background-color: $wh;
+        height: 80px;
+        box-shadow: 0 0 5rem rgba(0,0,0,.16);
+
+        .container {
+            height: 100%;
+        }
+
+        .header_logo {
+            width: 107px;
+            height: auto;
+
+            &--white {
+                opacity: 0;
+            }
+
+            &--onShrink {
+                opacity: 1;
+            }
+        }
+
+        .menu {
+
+
+            .menu-item {
+                padding: 30px 20px;
+
+                a {
+                    color: $bl;
+
+                    &::after {
+                        background-color: $bl;
+                    }
+                }
+            }
+
+            .has-submenu {
+                padding: 0px 43px 0px 12px;
+
+                &::after {
+                    border-color: $bl transparent transparent transparent;
+                }
+            }
+        }
+
+        .header-signin {
+
+            a {
+                background-color: $mainblue;
+                color: $wh;
+                border: 1px solid $wh;
+                transition: $easing;
+
+                &::after {
+                    background-image: url(../img/arrow.svg);
+                }
+            }
+        }
+    }
+}
+
+.header_logo-wrap {
+    width: 175px;
+    height: 100%;
+}
+
+.header_logo {
+    width: 173px;
+    height: 96px;
+    padding-top: 10px;
+    position: absolute;
+    top: 0px;
+    transition: $easing;
+
+    &--white {
+        position: absolute;
+    }
+
+    &--onShrink {
+        position: absolute;
+        opacity: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .header {
+        &.shrink {
+            height: 60px;
+
+            .header_logo-wrap {
+                height: 100%;
+            }
+
+            .header_logo {
+                width: 90px;
+                height: 100%;
+                padding-top: 5px;
+            }
+
+            .mobile-menu-btn {
+                top: 9px;
+            }
+
+            .menu {
+
+                .menu-item {
+                    a {
+                        color: $wh;
+                        font-weight: 300;
+                        transition: none;
+        
+                        &::after {
+                            background-color: transparent;
+                        }
+                    }
+                }
+    
+                .menu-item {
+                    padding: 14px 20px;
+                }
+            }
+        }
+    }
+}
+
+.header_menu {
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header_menu {
+        position: fixed;
+        background-color: $mainblue;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        transform: translateX(100%);
+        transition: $easing;
+
+        .menu {
+            flex-wrap: wrap;
+            padding-top: 115px;
+
+            .menu-item {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+
+                a {
+                    font-size: 15px;
+
+                    &::after {
+
+                        background-color: transparent;
+                    
+                    }
+                }
+            }
+        }
+
+        &.opened {
+            transform: translateX(0%);
+            transition: $easing;
+        }
+    }
+}
+
+.menu-item {
+
+    padding: 35px 20px;
+
+    a {
+    font-weight: 300;
+    line-height: 20px;
+    font-size: $f-sm;
+    color: $wh;
+    position: relative;
+    
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0px;
+            width: 0%;
+            height: 1px;
+            background-color: $wh;
+            transition: $easing;
+        }
+
+        &:hover::after {
+            width: 100%;
+            transition: $easing;
+        }
+    }
+
+    &.active {
+
+        a {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 991px) {
+    .header_logo-wrap {
+        width: 147px;
+        height: 82px;
+    }
+
+    .header_logo {
+        width: 147px;
+        height: auto;
+    }
+}
+
+.sign_in_btn {
+    background-color: $mainblue;
+    color: $wh;
+    font-size: $f-sm;
+    padding: 14px 54px 14px 29px;
+    border-radius: 50px;
+    position: relative;
+    font-weight: 300;
+
+    &.negative {
+        background-color: $wh;
+        color: $mainblue;
+
+        &::after {
+            background-image: url(../img/arrow_dark.svg);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../img/arrow.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 10px;
+        top: 16px;
+        right: 24px;
+        transition: $easing;
+    }
+
+    &:hover::after {
+        right: 20px;
+        transition: $easing;
+    }
+}
+
+//mobile menu signin btn
+.header-signin--mobile {
+    width: 150px;
+    margin: 32px auto 0px;
+
+    a {
+        background-color: #ffffff;
+        color: #003E92;
+        font-size: 13px;
+        padding: 14px 54px 14px 29px;
+        border-radius: 50px;
+        position: relative;
+        font-weight: 300;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url(../img/arrow_dark.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 10px;
+            top: 16px;
+            right: 24px;
+            transition: $easing;
+        }
+    }
+}
+
+.mobile-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 42px;
+    width: 42px;
+
+    &--round {
+        height: 100%;
+        width: 100%;
+        background-color: $mainblue;
+        border-radius: 100%;
+        position: relative;
+
+        &.opened {
+
+            .first {
+                transform: rotate(45deg);
+                left: auto;
+                right: 11px;
+                top: 20px;
+                transition: $easing;
+            }
+    
+            .second {
+                transform: rotate(-45deg);
+                left: auto;
+                right: 11px;
+                top: 20px;
+                transition: $easing;
+            }
+
+        }
+    }
+
+    &--block {
+        width: 20px;
+        height: 1.5px;
+        background-color: $wh;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: $easing;
+
+        &.first {
+            top: 15px;
+        }
+
+        &.second {
+            top: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header {
+        &.logged {
+
+            .menu {
+
+                & .sign_in_btn {
+                    border: 1px solid $wh;
+                    top: 0%;
+                    transform: translateY(-0%);
+                    color: $mainblue;
+                }
+            }
+
+            .menu-item {
+
+                > a {
+                    opacity: 1;
+
+                    &::after {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+.submenu {
+    position: absolute;
+    padding-top: 20px;
+    margin-top: 20px;
+    display: none;
+    transition: $easing;
+    left: 0px;
+
+
+    li {
+
+        background-color: $wh;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($color: $mainblue, $alpha: .2);
+        }
+
+        &:first-child {
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0px 3px 3px 3px;
+                border-color:  transparent transparent $wh transparent;
+                top: 17px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+    }
+
+    a {
+        padding: 10px 28px 10px 13px; 
+        line-height: 20px;
+        font-size: 13px;
+        color: $mainblue;
+        position: relative;
+        font-weight: 400;
+    }
+
+}
+
+.has-submenu {
+
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 300;
+    line-height: 20px;
+    font-size: 13px;
+    color: #ffffff;
+    position: relative;
+    margin-right: 5px;
+    padding: 0px 43px 0px 12px;
+
+    &:hover {
+
+        .submenu {
+            display: block;
+            animation: fadeIn .3s ease-in ;
+            
+        }
+    }
+
+    a {
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 3px 3px 0 3px;
+        border-color: $wh transparent transparent transparent;
+        top: 8px;
+        right: 29px;
+    }
+}
+
+
+@-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }

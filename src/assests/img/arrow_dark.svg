@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.061" height="9.061" viewBox="0 0 21.061 9.061">
+  <g id="arrow_dark" transform="translate(-274 -1101.47)">
+    <line id="line" x2="20" transform="translate(274 1106)" fill="none" stroke="#003e92" stroke-width="1.5"/>
+    <path id="pointer" d="M1216,46l4,4-4,4" transform="translate(-926 1056)" fill="none" stroke="#003e92" stroke-width="1.5"/>
+  </g>
+</svg>

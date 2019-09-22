@@ -1,0 +1,95 @@
+.signin {
+    max-width: 450px;
+    margin: 0 auto;
+
+    .input {
+
+        input {
+            border: 1px solid $input-border;
+            height: 71px;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active  {
+            /* -webkit-text-fill-color: black; */ /* You can change text color here */
+            animation: input_background_autofill 0s forwards;
+        }
+
+        &.focused {
+            
+            input {
+                transition: $easing;
+                padding-top: 20px;
+            }
+        }
+    }
+
+    label {
+        position: absolute;
+        color: rgba($color: $wh, $alpha: .5);
+        left: 20px;
+        top: 43px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        transform-origin: left bottom;
+        pointer-events: none;
+        transition: $easing;
+        opacity: 0.5;
+        transform: scale(1) translateY(0);
+
+        &.act {
+            top: 33px;
+            font-size: 11px;
+            opacity: 1;
+            color: rgba($color: $wh, $alpha: 1);
+        }
+    }
+
+    .group {
+        text-align: center;
+
+        > .submit {
+            margin-top: 30px;
+
+            input {
+                width: 212px;
+            }
+
+            &::after {
+                right: 60px;
+            }
+
+        }
+    }
+
+    .input-wrap {
+
+        &.alrt {
+            border-color: $red;
+            color: $red;
+
+            input {
+                color:inherit;
+                border-color: inherit;
+            }
+
+            label {
+                display: none;
+            }
+
+            span {
+                top: 33px;
+            }
+
+
+        }
+    }
+    
+}
+
+@keyframes input_background_autofill {
+    100% { background-color: transparent; color: $wh; }
+}
